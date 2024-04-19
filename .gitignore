@@ -1,1 +1,4 @@
 artifacts
+**.cpython*
+model/__pycache__
+utils/__pycache__
