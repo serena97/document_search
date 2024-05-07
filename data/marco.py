@@ -7,6 +7,12 @@ dataset = load_dataset("ms_marco",'v1.1')
 def get_training_dataset():
     return dataset['train']
 
+def get_validation_dataset():
+    return dataset['validation']
+
+def get_test_dataset():
+    return dataset['test']
+
 def get_sentences():
     queries = dataset['train']['query']
     passages = [text for passage in dataset['train']['passages'] for text in passage['passage_text']]
@@ -27,6 +33,6 @@ def build_query_doc_pairs(index):
 
 def get_all_documents():
     train = [passage['passage_text'] for passage in dataset['train']['passages']]
-    # validation = [passage['passage_text'] for passage in dataset['train']['passages']]
-    # test = [passage['passage_text'] for passage in dataset['train']['passages']]
-    return train
+    validation = [passage['passage_text'] for passage in dataset['train']['passages']]
+    test = [passage['passage_text'] for passage in dataset['train']['passages']]
+    return list(set(train + validation + test))

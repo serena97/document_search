@@ -3,7 +3,7 @@ import torch.nn as nn
 class RNNEncoder(nn.Module):
     def __init__(self, input_dim, hidden_dim):
         super(RNNEncoder, self).__init__()
-        self.rnn = nn.GRU(input_size=input_dim, hidden_size=hidden_dim, batch_first=True)
+        self.rnn = nn.RNN(input_size=input_dim, hidden_size=hidden_dim, batch_first=True)
     
     def forward(self, x):
         _, h_n = self.rnn(x)

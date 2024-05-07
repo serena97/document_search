@@ -2,3 +2,7 @@ artifacts
 **.cpython*
 model/__pycache__
 utils/__pycache__
+wandb
+**.npy
+**.pth
+**.index
