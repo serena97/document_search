@@ -1,0 +1,8 @@
+cbow_weights
+cache_documents.pt
+search_engine.model
+search_engine.vocab
+corpus.txt
+artifacts
+search_engine_weights*
+*.pt
